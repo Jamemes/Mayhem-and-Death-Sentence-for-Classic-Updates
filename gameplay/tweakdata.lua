@@ -27,6 +27,18 @@ for _, job in pairs(tweak_data.narrative.jobs) do
 		table.insert(job.experience_mul, 5, job.experience_mul[5])
 		table.insert(job.experience_mul, job.experience_mul[5])
 	end
+	
+	if job.contract_visuals then
+		if job.contract_visuals.min_mission_xp then
+			table.insert(job.contract_visuals.min_mission_xp, 5, job.contract_visuals.min_mission_xp[5])
+			table.insert(job.contract_visuals.min_mission_xp, job.contract_visuals.min_mission_xp[5])
+		end
+		
+		if job.contract_visuals.max_mission_xp then
+			table.insert(job.contract_visuals.max_mission_xp, 5, job.contract_visuals.max_mission_xp[5])
+			table.insert(job.contract_visuals.max_mission_xp, job.contract_visuals.max_mission_xp[5])
+		end
+	end
 end
 
 if difficulty == "easy_wish" then

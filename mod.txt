@@ -1,7 +1,7 @@
 {
 	"name" : "Mayhem & Death Sentence for Classic Updates",
 	"author" : "James",
-	"version" : "1",
+	"version" : "2",
 	"hooks" : [
 		{ "hook_id" : "lib/network/base/handlers/connectionnetworkhandler", "script_path" : "network/connectionnetworkhandler.lua"},
 		{ "hook_id" : "lib/network/base/networkpeer",						"script_path" : "network/networkpeer.lua"},
