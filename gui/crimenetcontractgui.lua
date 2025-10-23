@@ -25,67 +25,69 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	local risk_text = self._contract_panel:child("risk_text")
 	local risk_stats_panel = self._contract_panel:child("risk_stats_panel")
 	local risk_murder_squad = self._contract_panel:child("risk_murder_squad")
-
-	if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
-		risk_murder_squad:set_image("guis/textures/pd2/hud_difficultymarkers_2", 90, 0, 30, 30)
-	end
 	
-	local risks = {
-		"risk_murder_squad",
-		"risk_murder_squad"
-	}
-	local rsx = 15
-	local max_x = 0
-	local max_y = 0
-	for i, name in ipairs(risks) do
-		local texture, rect = tweak_data.hud_icons:get_icon_data("risk_murder_squad")
-		
+	if risk_murder_squad then
 		if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
-			texture = i == 2 and "guis/textures/pd2/hud_difficultymarkers_2" or texture
-			rect = i == 2 and {30, 32, 30, 30} or rect
+			risk_murder_squad:set_image("guis/textures/pd2/hud_difficultymarkers_2", 90, 0, 30, 30)
 		end
 		
-		local color = Color.white
-		local alpha = 0.25
-		local risk = self._contract_panel:bitmap({
-			name = name..i,
-			texture = texture,
-			texture_rect = rect,
-			x = 0,
-			y = 0,
-			alpha = alpha,
-			color = color
-		})
-		risk:set_x(risk_murder_squad:right() + rsx - 15)
-		risk:set_top(math.round(risk_murder_squad:top()))
-		rsx = rsx + risk:w() + 2
-		local difficulty_name = i == 1 and "overkill_290" or i == 2 and "sm_wish"
-		local stat = managers.statistics:completed_job(job_data.job_id, difficulty_name)
-		local risk_stat = risk_stats_panel:text({
-			name = name..i,
-			font = tweak_data.menu.pd2_small_font,
-			font_size = tweak_data.menu.pd2_small_font_size,
-			text = tostring(stat),
-			align = "center"
-		})
-		self:make_fine_text(risk_stat)
-		risk_stat:set_world_center_x(risk:world_center_x() - 1)
-		risk_stat:set_x(math.round(risk_stat:x()))
-		color = Color.white
-		alpha = 0.5
-		risk_stat:set_color(color)
-		risk_stat:set_alpha(alpha)
-		max_y = math.max(max_y, risk:bottom())
-		max_x = math.max(max_x, risk:right() + 5)
-		max_x = math.max(max_x, risk_stat:right() + risk_stats_panel:left() + 10)
+		local risks = {
+			"risk_murder_squad",
+			"risk_murder_squad"
+		}
+		local rsx = 15
+		local max_x = 0
+		local max_y = 0
+		for i, name in ipairs(risks) do
+			local texture, rect = tweak_data.hud_icons:get_icon_data("risk_murder_squad")
+			
+			if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
+				texture = i == 2 and "guis/textures/pd2/hud_difficultymarkers_2" or texture
+				rect = i == 2 and {30, 32, 30, 30} or rect
+			end
+			
+			local color = Color.white
+			local alpha = 0.25
+			local risk = self._contract_panel:bitmap({
+				name = name..i,
+				texture = texture,
+				texture_rect = rect,
+				x = 0,
+				y = 0,
+				alpha = alpha,
+				color = color
+			})
+			risk:set_x(risk_murder_squad:right() + rsx - 15)
+			risk:set_top(math.round(risk_murder_squad:top()))
+			rsx = rsx + risk:w() + 2
+			local difficulty_name = i == 1 and "overkill_290" or i == 2 and "sm_wish"
+			local stat = managers.statistics:completed_job(job_data.job_id, difficulty_name)
+			local risk_stat = risk_stats_panel:text({
+				name = name..i,
+				font = tweak_data.menu.pd2_small_font,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				text = tostring(stat),
+				align = "center"
+			})
+			self:make_fine_text(risk_stat)
+			risk_stat:set_world_center_x(risk:world_center_x() - 1)
+			risk_stat:set_x(math.round(risk_stat:x()))
+			color = Color.white
+			alpha = 0.5
+			risk_stat:set_color(color)
+			risk_stat:set_alpha(alpha)
+			max_y = math.max(max_y, risk:bottom())
+			max_x = math.max(max_x, risk:right() + 5)
+			max_x = math.max(max_x, risk_stat:right() + risk_stats_panel:left() + 10)
+		end
+		
+		local ew_stat = risk_stats_panel:child("risk_murder_squad")
+		ew_stat:set_text(managers.statistics:completed_job(job_data.job_id, "easy_wish"))
+		
+		local sm_wish = self._contract_panel:child("risk_murder_squad2")
+		risk_text:set_w(300)
+		risk_text:set_left(sm_wish:right() + 12)
 	end
-	
-	local ew_stat = risk_stats_panel:child("risk_murder_squad")
-	ew_stat:set_text(managers.statistics:completed_job(job_data.job_id, "easy_wish"))
-	
-	local sm_wish = self._contract_panel:child("risk_murder_squad2")
-	risk_text:set_w(300)
-	risk_text:set_left(sm_wish:right() + 12)
 end
 
 local function set(difficulty_id, diff, panel)

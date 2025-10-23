@@ -1,12 +1,19 @@
 local data = ConnectionNetworkHandler.lobby_sync_update_difficulty
 function ConnectionNetworkHandler:lobby_sync_update_difficulty(difficulty)
 	Global.game_settings.difficulty = difficulty
-	
+
 	if managers.menu_component then
 		managers.menu_component:on_job_updated()
 	end
 
 	data(self, difficulty)
+end
+
+local data = ConnectionNetworkHandler.sync_game_settings
+function ConnectionNetworkHandler:sync_game_settings(job_index, level_id_index, difficulty_index, sender)
+	difficulty_index = difficulty_index == 6 and 7 or difficulty_index
+
+	data(self, job_index, level_id_index, difficulty_index, sender)
 end
 
 local data = ConnectionNetworkHandler.request_join

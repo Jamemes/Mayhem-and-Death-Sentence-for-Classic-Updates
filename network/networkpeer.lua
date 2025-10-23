@@ -1,4 +1,4 @@
-local is_new_diffs = Global.game_settings.difficulty == "easy_wish" or Global.game_settings.difficulty == "sm_wish"
+local is_new_diffs = Global.game_settings and (Global.game_settings.difficulty == "easy_wish" or Global.game_settings.difficulty == "sm_wish")
 local data = NetworkPeer.send
 function NetworkPeer:send(func_name, ...)
 	data(self, func_name, ...)
