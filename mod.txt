@@ -1,7 +1,7 @@
 {
 	"name" : "Mayhem & Death Sentence for Classic Updates",
 	"author" : "James",
-	"version" : "2",
+	"version" : "3",
 	"hooks" : [
 		{ "hook_id" : "lib/network/matchmaking/networkaccountsteam",		"script_path" : "network/networkaccountsteam.lua"},
 		{ "hook_id" : "lib/network/base/clientnetworksession",				"script_path" : "network/clientnetworksession.lua"},
