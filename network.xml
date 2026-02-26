@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<tweaks>
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="join_request_reply"/>
+			<param max="6"/>
+		</search>
+		<target mode="attributes" multiple="true">
+			<attr name="max" value="8"/>
+		</target>
+	</tweak>
+	
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="sync_game_settings"/>
+			<param max="6"/>
+		</search>
+		<target mode="attributes" multiple="true">
+			<attr name="max" value="8"/>
+		</target>
+	</tweak>
+	
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="sync_game_settings"/>
+			<param max="6"/>
+		</search>
+		<target mode="attributes" multiple="true">
+			<attr name="max" value="8"/>
+		</target>
+	</tweak>
+</tweaks>

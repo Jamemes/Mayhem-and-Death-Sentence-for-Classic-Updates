@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<mod>
+	<hooks>
+		<post script_path="mod.lua" hook_id="lib/entry"/>
+	</hooks>
+	<tweak definition="network.xml"/>
+	
+	<assets base_path="assets/">
+		<group name="guis/textures/pd2/">
+			<file :name="hud_difficultymarkers_2.texture"/>
+			<file :name="risklevel_deathwish_easywish_blackscreen.texture"/>
+			<file :name="risklevel_deathwish_sm_blackscreen.texture"/>
+		</group>
+
+		<group>
+			<group name="core/physic_effects/">
+				<file :name="sequencemanager_push_with_ang.physic_effect"/>
+				<file :name="sequencemanager_push.physic_effect"/>
+			</group>
+		</group>
+
+		<group load_group="packages/sm_wish" dyn_package="true" target="scripted">
+			<group name="units/pd2_dlc_gitgud/characters/">
+				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.unit"/>
+				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.object"/>
+				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.model"/>
+				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.material_config"/>
+				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.cooked_physics"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer.unit"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer.object"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer.model"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer.material_config"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer.cooked_physics"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_husk.unit"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_contour.material_config"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_nm.texture"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_head_nm.texture"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_head_df.texture"/>
+				<file :name="ene_zeal_tazer/ene_zeal_tazer_df.texture"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield.unit"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield.object"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield.model"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield.material_config"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield.cooked_physics"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield_husk.unit"/>
+				<file :name="ene_zeal_swat_shield/ene_zeal_swat_shield_contour.material_config"/>
+				<file :name="ene_zeal_swat_heavy/swat_heavy_nm.texture"/>
+				<file :name="ene_zeal_swat_heavy/swat_heavy_head_nm.texture"/>
+				<file :name="ene_zeal_swat_heavy/swat_heavy_head_df.texture"/>
+				<file :name="ene_zeal_swat_heavy/swat_heavy_df.texture"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy.unit"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy.object"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy.model"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy.material_config"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy.cooked_physics"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk.unit"/>
+				<file :name="ene_zeal_swat_heavy/ene_zeal_swat_heavy_contour.material_config"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat.unit"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat.object"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat.model"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat.material_config"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat.cooked_physics"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_nm.texture"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_husk.unit"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_head_nm.texture"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_head_df.texture"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_df.texture"/>
+				<file :name="ene_zeal_swat/ene_zeal_swat_contour.material_config"/>
+				<file :name="ene_zeal_cloaker/zeal_cloaker_head_nm.texture"/>
+				<file :name="ene_zeal_cloaker/zeal_cloaker_head_df.texture"/>
+				<file :name="ene_zeal_cloaker/zeal_cloaker_body_nm.texture"/>
+				<file :name="ene_zeal_cloaker/zeal_cloaker_body_df.texture"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.unit"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.sequence_manager"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.object"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.model"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.material_config"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker.cooked_physics"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker_husk.unit"/>
+				<file :name="ene_zeal_cloaker/ene_zeal_cloaker_contour.material_config"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_upper_body_debris.unit"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_upper_body_debris.object"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_upper_body_debris.model"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_upper_body_debris.cooked_physics"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_head_debris.unit"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_head_debris.object"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_head_debris.model"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_head_debris.material_config"/>
+				<file :name="ene_zeal_cloaker/debris/ene_spook_head_debris.cooked_physics"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.unit"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.sequence_manager"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.object"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.model"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.material_config"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3.cooked_physics"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_husk.unit"/>
+				<file :name="ene_zeal_bulldozer_3/ene_zeal_bulldozer_3_contour.material_config"/>
+				<file :name="ene_zeal_bulldozer_3/bulldozer_3_df.texture"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.unit"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.sequence_manager"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.object"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.model"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.material_config"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2.cooked_physics"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_husk.unit"/>
+				<file :name="ene_zeal_bulldozer_2/ene_zeal_bulldozer_2_contour.material_config"/>
+				<file :name="ene_zeal_bulldozer_2/bulldozer_2_df.texture"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.unit"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.sequence_manager"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.object"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.model"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.material_config"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer.cooked_physics"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer_husk.unit"/>
+				<file :name="ene_zeal_bulldozer/ene_zeal_bulldozer_contour.material_config"/>
+				<file :name="ene_zeal_bulldozer/bulldozer_nm.texture"/>
+				<file :name="ene_zeal_bulldozer/bulldozer_df.texture"/>
+				<file :name="ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet.unit"/>
+				<file :name="ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet.object"/>
+				<file :name="ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet.model"/>
+				<file :name="ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet.material_config"/>
+				<file :name="ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet.cooked_physics"/>
+				<file :name="ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet.unit"/>
+				<file :name="ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet.object"/>
+				<file :name="ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet.model"/>
+				<file :name="ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet.material_config"/>
+				<file :name="ene_acc_zeal_swat_heavy_helmet/ene_acc_zeal_swat_heavy_helmet.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat.object"/>
+				<file :name="ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat.model"/>
+				<file :name="ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache.object"/>
+				<file :name="ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache.model"/>
+				<file :name="ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck.object"/>
+				<file :name="ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck.model"/>
+				<file :name="ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate.object"/>
+				<file :name="ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate.model"/>
+				<file :name="ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest.object"/>
+				<file :name="ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest.model"/>
+				<file :name="ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest.cooked_physics"/>
+				<file :name="ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back.unit"/>
+				<file :name="ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back.object"/>
+				<file :name="ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back.model"/>
+				<file :name="ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back.material_config"/>
+				<file :name="ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back.cooked_physics"/>
+				<file :name="ene_acc_shield_new_swat/shield_nm.texture"/>
+				<file :name="ene_acc_shield_new_swat/shield_il.texture"/>
+				<file :name="ene_acc_shield_new_swat/shield_df.texture"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.unit"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.sequence_manager"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.object"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.model"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.material_config"/>
+				<file :name="ene_acc_shield_new_swat/ene_acc_shield_new_swat.cooked_physics"/>
+			</group>
+		</group>
+	</assets>
+</mod>

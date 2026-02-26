@@ -1,3 +1,4 @@
+local db_entry = (blt and blt.db_create_entry) or (DB and DB.create_entry)
 Hooks:PostHook(HUDMissionBriefing, "init", "CUS_init_new_difficulties_briefing", function(self)
 	local difficulty_stars = managers.job:has_active_job() and managers.job:current_difficulty_stars() or 0
 	local risks = {
@@ -6,7 +7,7 @@ Hooks:PostHook(HUDMissionBriefing, "init", "CUS_init_new_difficulties_briefing",
 	}
 	for i, name in ipairs(risks) do
 		local texture, rect = tweak_data.hud_icons:get_icon_data(name)
-		if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
+		if db_entry then
 			texture = i == 2 and "guis/textures/pd2/hud_difficultymarkers_2" or texture
 			rect = i == 2 and {30, 32, 30, 30} or rect
 		end
@@ -32,7 +33,7 @@ Hooks:PostHook(HUDMissionBriefing, "init", "CUS_init_new_difficulties_briefing",
 	local risk_murder_squad = self._paygrade_panel:child("risk_murder_squad")
 	local risk_easy_wish = self._paygrade_panel:child("risk_easy_wish")
 	local risk_sm_wish = self._paygrade_panel:child("risk_sm_wish")
-	if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
+	if db_entry then
 		risk_murder_squad:set_image("guis/textures/pd2/hud_difficultymarkers_2", 90, 0, 30, 30)
 	end
 		
