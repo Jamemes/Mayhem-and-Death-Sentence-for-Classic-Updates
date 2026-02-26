@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<physic_effects>
-	<push name="core_sequencemanager_push" velocity="param1" mass="param2"/>
-	<rot_accelerate name="core_sequencemanager_rot_acc" acceleration="param3"/>
-	<effect>
-		<unit action="core_sequencemanager_push"/>
-		<unit action="core_sequencemanager_rot_acc" duration="0.1"/>
-	</effect>
-</physic_effects>

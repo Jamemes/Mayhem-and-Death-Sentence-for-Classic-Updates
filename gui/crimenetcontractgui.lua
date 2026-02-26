@@ -1,4 +1,3 @@
-local db_entry = (blt and blt.db_create_entry) or (DB and DB.create_entry)
 local data = CrimeNetContractGui.init
 function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	data(self, ws, fullscreen_ws, node)
@@ -28,7 +27,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	local risk_murder_squad = self._contract_panel:child("risk_murder_squad")
 	
 	if risk_murder_squad then
-		if db_entry then
+		if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
 			risk_murder_squad:set_image("guis/textures/pd2/hud_difficultymarkers_2", 90, 0, 30, 30)
 		end
 		
@@ -42,7 +41,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		for i, name in ipairs(risks) do
 			local texture, rect = tweak_data.hud_icons:get_icon_data("risk_murder_squad")
 			
-			if db_entry then
+			if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
 				texture = i == 2 and "guis/textures/pd2/hud_difficultymarkers_2" or texture
 				rect = i == 2 and {30, 32, 30, 30} or rect
 			end

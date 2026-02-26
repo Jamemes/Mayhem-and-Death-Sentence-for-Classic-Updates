@@ -11,14 +11,7 @@ table.insert(tweak_data.difficulties, "sm_wish")
 table.insert(tweak_data.difficulty_level_locks, 80)
 table.insert(tweak_data.experience_manager.difficulty_multiplier, 20)
 tweak_data.difficulty_name_ids.sm_wish = "menu_difficulty_sm_wish"
-
-for _, level in pairs(tweak_data.levels) do
-	if level.static_experience then
-		table.insert(level.static_experience, 5, level.static_experience[5] * 0.9)
-		table.insert(level.static_experience, level.static_experience[6] * 1.5)
-	end
-end
-
+	
 for _, job in pairs(tweak_data.narrative.jobs) do
 	if job.payout then
 		table.insert(job.payout, 5, job.payout[5] * 0.9)
@@ -105,7 +98,7 @@ elseif difficulty == "sm_wish" then
 	char.fbi_swat.weapon = tweak_data.character.presets.weapon.deathwish
 	char.fbi_heavy_swat.weapon = tweak_data.character.presets.weapon.deathwish
 	
-	if (blt and blt.db_create_entry) or (DB and DB.create_entry) then
+	if PackageManager:package_exists("packages/sm_wish") and PackageManager:loaded("packages/sm_wish") then
 		group.unit_categories.spooc.units = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker")}
 		group.unit_categories.FBI_swat_M4.units = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")}
 		group.unit_categories.FBI_swat_R870.units = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")}
@@ -121,6 +114,8 @@ elseif difficulty == "sm_wish" then
 	else
 		group.unit_categories.FBI_swat_M4.units = {Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")}
 		group.unit_categories.FBI_swat_R870.units = {Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")}
+		-- group.unit_categories.FBI_heavy_G36.units = {Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")}
+		-- group.unit_categories.FBI_heavy_G36_w.units = {Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")}
 		group.unit_categories.FBI_tank.units = {
 			Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
 			Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),

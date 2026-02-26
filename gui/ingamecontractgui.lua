@@ -1,4 +1,3 @@
-local db_entry = (blt and blt.db_create_entry) or (DB and DB.create_entry)
 local function get_skull_index(panel, id)
 	for i = 0, panel:num_children() - 1 do
 		if panel:child(i) and panel:child(i):name() == id then
@@ -13,7 +12,7 @@ Hooks:PostHook(IngameContractGui, "init", "HVT_init_new_difficulties_ingame", fu
 	local risk_text = text_panel:child("risk_text")
 	local risk_stats_panel = text_panel:child("risk_stats_panel")
 	local risk_murder_squad = text_panel:child(id + 4)
-	if db_entry then
+	if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
 		risk_murder_squad:set_image("guis/textures/pd2/hud_difficultymarkers_2", 90, 0, 30, 30)
 	end
 	
@@ -31,7 +30,7 @@ Hooks:PostHook(IngameContractGui, "init", "HVT_init_new_difficulties_ingame", fu
 	for i, name in ipairs(risks) do
 		local texture, rect = tweak_data.hud_icons:get_icon_data("risk_murder_squad")
 		
-		if db_entry then
+		if DB:has("texture", "guis/textures/pd2/hud_difficultymarkers_2") then
 			texture = i == 2 and "guis/textures/pd2/hud_difficultymarkers_2" or texture
 			rect = i == 2 and {30, 32, 30, 30} or rect
 		end

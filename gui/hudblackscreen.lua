@@ -1,4 +1,3 @@
-local db_entry = (blt and blt.db_create_entry) or (DB and DB.create_entry)
 local data = HUDBlackScreen.set_job_data
 function HUDBlackScreen:set_job_data()
 	data(self)
@@ -7,14 +6,24 @@ function HUDBlackScreen:set_job_data()
 	if job_panel:num_children() > 1 then
 		local risk_panel = job_panel:child(0)
 		local risk_text = job_panel:child(1)
+		
+		local dw_skull = tweak_data.gui.blackscreen_risk_textures.overkill_290
 		local skulls = risk_panel:num_children()
 		
 		if skulls >= 4 then
-			risk_panel:child(3):set_image(db_entry and "guis/textures/pd2/risklevel_deathwish_easywish_blackscreen" or "guis/textures/pd2/risklevel_deathwish_blackscreen")
+			if DB:has("texture", "guis/textures/pd2/risklevel_deathwish_easywish_blackscreen") then
+				risk_panel:child(3):set_image("guis/textures/pd2/risklevel_deathwish_easywish_blackscreen")
+			else
+				risk_panel:child(3):set_image("guis/textures/pd2/risklevel_deathwish_blackscreen")
+			end
 		end
 		
 		if skulls >= 6 then
-			risk_panel:child(5):set_image(db_entry and "guis/textures/pd2/risklevel_deathwish_sm_blackscreen" or "guis/textures/pd2/risklevel_deathwish_blackscreen")
+			if DB:has("texture", "guis/textures/pd2/risklevel_deathwish_sm_blackscreen") then
+				risk_panel:child(5):set_image("guis/textures/pd2/risklevel_deathwish_sm_blackscreen")
+			else
+				risk_panel:child(5):set_image("guis/textures/pd2/risklevel_deathwish_blackscreen")
+			end
 		end
 		
 		if skulls == 4 then
