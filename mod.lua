@@ -19,7 +19,7 @@ function HCWP:load_package(package)
 			can_create_entry = true
 		end
 
-		if can_create_entry and not managers.dyn_resource:has_resource(ext, path, "packages/dyn_resources") then
+		if can_create_entry and (managers.dyn_resource and not managers.dyn_resource:has_resource(ext, path, "packages/dyn_resources")) then
 			managers.dyn_resource:load(ext, path, "packages/dyn_resources", function() end)
 		else
 			break
@@ -29,7 +29,7 @@ end
 
 function HCWP:unload_package(package)
 	for _, spec in ipairs(HCWP.packages[package].assets) do
-		if managers.dyn_resource:has_resource(Idstring(spec.extension), Idstring(spec.dbpath), "packages/dyn_resources") then
+		if managers.dyn_resource and managers.dyn_resource:has_resource(Idstring(spec.extension), Idstring(spec.dbpath), "packages/dyn_resources") then
 			managers.dyn_resource:unload(Idstring(spec.extension), Idstring(spec.dbpath), "packages/dyn_resources", false)
 		else
 			break
