@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 <mod>
-	<hooks>
-		<post script_path="mod.lua" hook_id="lib/entry"/>
-	</hooks>
 	<tweak definition="network.xml"/>
 	
 	<assets base_path="assets/">
@@ -19,7 +16,7 @@
 			</group>
 		</group>
 
-		<group load_group="packages/sm_wish" dyn_package="true" target="scripted">
+		<group>
 			<group name="units/pd2_dlc_gitgud/characters/">
 				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.unit"/>
 				<file :name="ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet.object"/>
